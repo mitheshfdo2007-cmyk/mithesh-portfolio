@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Activities | Mithesh Fernando</title>
+
+    <style>
+        /* [REQUIREMENT]: Selector for two or more tags [cite: 46] */
+        h2, h3 {
+            color: #E6C266;
+            text-shadow: 0 0 10px rgba(230, 194, 102, 0.4);
+        }
+
+        h2 {
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 100px; /* Adjust based on your header height */
+            background: rgba(0,0,0,0.8);
+            z-index: 5;
+        }
+
+        /* [REQUIREMENT]: Selector for a class [cite: 47] */
+        .sport-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(183, 75, 75, 0.3);
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            transition: 0.4s;
+        }
+
+        /* [REQUIREMENT]: Contextual style (Tag within another tag) [cite: 48] */
+        .sport-card p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        /* [REQUIREMENT]: Hover style applied to <a> tag [cite: 49] */
+        .learn-more-btn:hover {
+            background: #b74b4b;
+            color: black;
+            box-shadow: 0 0 20px #b74b4b;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="hometown-page">
+    <div class="bg-blobs">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+    </div>
+
+    <div class="homenav">
+        <a href="index.html" class="logo">Mithesh Fernando</a>
+        <div class="nav-links-wrapper">
+            <a href="index.html">Home</a>
+            <a href="Hometown.html">Home Town</a>
+            <a href="Activity.html" class="active">Activity</a>
+        </div>
+    </div>
+
+    <section class="full-page" style="display: flex; gap: 5rem; justify-content: center; align-items: center; flex-wrap: wrap; padding-top: 100px;">
+        
+
+        <div class="sport-card" style="border: 2px solid #b74b4b;"> <div class="image-viewport" style="height: 250px;">
+                <img src="images/Badminton.jpg" alt="Badminton" class="hologram-img">
+                <div class="scan-beam"></div>
+            </div>
+            <h2>01. BADMINTON</h2>
+            <p><span style="color: #E6C266; font-weight: 600;">> REASON:</span> I enjoy the incredible speed and quick reflexes required for every smash.</p>
+            <p><span style="color: #E6C266; font-weight: 600;">> ADVANTAGE:</span> It provides an intense cardiovascular workout and improves coordination.</p>
+            
+            <div style="margin-top: 2rem; text-align: right;">
+                <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiUsZKmkoaUAxXvcGwGHdbRAa8QFnoECC0QAQ&url=https%3A%2F%2Fbwfbadminton.com%2F&usg=AOvVaw397F0sfKzPHw_9l2V1TL5O&opi=89978449" target="_blank" class="learn-more-btn" 
+                   style="padding: 10px 20px; border: 1px solid #b74b4b; color: #b74b4b; text-decoration: none; display: inline-block; border-radius: 5px; transition: 0.3s;">
+                    <i class="fa-solid fa-circle-dot"></i> VIEW PRO RULES
+                </a>
+            </div>
+        </div>
+
+        <div class="sport-card" style="border-color: #E6C266;"> <div class="image-viewport" style="height: 250px;">
+                <img src="images/basketball.webp" alt="Basketball" class="hologram-img">
+                <div class="scan-beam"></div>
+            </div>
+            <h2>02. BASKETBALL</h2>
+            <p><span style="color: #b74b4b;">> REASON:</span> I love the team dynamic and the strategy involved in breaking down a defense.</p>
+            <p><span style="color: #b74b4b;">> ADVANTAGE:</span> It builds physical strength and teaches valuable lessons in teamwork.</p>
+            
+            <div style="margin-top: 2rem; text-align: right;">
+                <a href="https://www.fiba.basketball/rules" target="_blank" class="learn-more-btn" 
+                   style="padding: 10px 20px; border: 1px solid #E6C266; color: #E6C266; text-decoration: none; display: inline-block; border-radius: 5px; transition: 0.3s;">
+                    <i class="fa-solid fa-basketball"></i> LEARN GAMEPLAY
+                </a>
+            </div>
+        </div>
+
+        <div class="sport-card" style="border: 2px solid #b74b4b;"> <div class="image-viewport" style="height: 250px;">
+                <img src="images\billiards.jpg" alt="Billiards" class="hologram-img">
+                <div class="scan-beam"></div>
+            </div>
+            <h2>03. BILLIARDS</h2>
+            <p><span style="color: #E6C266; font-weight: 600;">> REASON:</span> I am fascinated by the geometry and physics involved in every calculated shot.</p>
+            <p><span style="color: #E6C266; font-weight: 600;">> ADVANTAGE:</span> It significantly sharpens mental focus, patience, and spatial awareness skills.</p>
+            
+            <div style="margin-top: 2rem; text-align: right;">
+                <a href="https://wpapool.com/rules-of-play/" target="_blank" class="learn-more-btn" 
+                   style="padding: 10px 20px; border: 1px solid #b74b4b; color: #b74b4b; text-decoration: none; display: inline-block; border-radius: 5px; transition: 0.3s;">
+                    <i class="fa-solid fa-circle-dot"></i> VIEW PRO RULES
+                </a>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

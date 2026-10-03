@@ -1,0 +1,755 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth; /* This is the magic line */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    background-color: #000;
+    /* This creates a subtle dot pattern */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: white;
+}
+
+body::before {
+    content: "MITHESH"; /* Or "IMS" if you want to focus on your major */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25vw; /* This makes it 25% of the screen width */
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03); /* Extremely faint white (3% opacity) */
+    z-index: -3; /* Placed behind the blobs and the content */
+    pointer-events: none; /* Allows users to click buttons through the text */
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2rem;
+}
+
+.bg-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* This keeps it BEHIND your content */
+    overflow: hidden;
+    filter: blur(80px); /* This makes the circles look like soft glows */
+}
+
+.blob-1, .blob-2 {
+    position: absolute;
+    width: 50rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: 0.2; /* This makes it subtle so you can still read text */
+    animation: move 20s infinite alternate;
+}
+
+.blob-1 {
+    background: #b74b4b; /* Your Crimson color */
+    top: -10%;
+    left: -10%;
+}
+
+.blob-2 {
+    background: #E6C266; /* Your Gold color */
+    bottom: -10%;
+    right: -10%;
+    animation-delay: -10s;
+}
+
+@keyframes move {
+    from { transform: translate(0, 0); }
+    to { transform: translate(20rem, 10rem); }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    
+    /* This is the magic line that pushes them to the bottom */
+    justify-content: flex-end; 
+    
+    align-items: center;
+    z-index: 1;
+    
+    /* This adds space from the very bottom edge so they aren't touching the floor */
+    padding-bottom: 10px;
+}
+
+.homenav .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: black;
+    background-color: #E6C266;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    pointer-events: auto; /* Ensures you can still click it */
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+nav {
+    /* We can remove the margin-top now since flex-end handles it */
+    margin-top: 0; 
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+nav a {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 500;
+    padding: 20px;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Flow up effect on Nav Hover */
+nav a:hover {
+    color: #b74b4b;
+    transform: translateY(-5px); 
+}
+
+section {
+    min-height: 100vh;
+    padding-left: 15rem;
+    margin-top: -150px;
+    margin-left: 110px;
+    gap: 8rem;
+    display: flex;
+}
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px; /* 20px from top, 5% from sides */
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, links right */
+    align-items: center;
+    z-index: 1000;
+    background: transparent;
+}
+
+.homenav a {
+    font-size: 2.5rem; /* Back to original size */
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease;
+    white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+.nav-links-wrapper {
+    display: flex;
+    gap: 4rem; /* Space between Home, Home Town, and Activity */
+}
+
+header nav {
+    margin-top: 15rem; 
+}
+
+.homenav a:hover {
+    color: #b74b4b;
+    transform: translateY(-5px);
+}
+/* General style for the new boxes */
+.full-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-box h1 {
+    font-size: 8rem; /* Higher than your home heading's 6rem */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-transform: uppercase; /* Makes it look more like a "title" */
+}
+
+/* This ensures the span (the red text) stays the right size too */
+.content-box h1 span {
+    font-size: 8rem; 
+}
+
+.fun-intro {
+    font-size: 3.5rem;   /* Roughly 35px - very readable */
+    font-weight: 300;    /* Lighter weight looks cleaner at large sizes */
+    line-height: 1.4;    /* Adds breathing room between lines */
+    margin-bottom: 5rem; /* Space between this text and your cards */
+    max-width: 900px;    /* Prevents the text from stretching too wide */
+    margin-left: auto;
+    margin-right: auto;
+    color: #dfdfdf;      /* A slightly off-white so the main heading stays the star */
+
+}
+
+/* --- Clickable Image Overlay --- */
+.card {
+    position: relative; /* Essential for the overlay to stay inside the card */
+}
+
+.card-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Places the link ABOVE the image and text */
+    cursor: pointer;
+}
+
+/* Ensure the text doesn't accidentally block the click */
+.card-content {
+    pointer-events: none; 
+    z-index: 5;
+}
+
+/* Keep the hover effect working through the overlay */
+.card:hover .card-img {
+    transform: scale(1.1);
+    filter: brightness(0.8) blur(0px);
+}
+
+/* --- Cards Section Styles --- */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 40rem;
+    height: 50rem;
+    border-radius: 2.5rem;
+    border: 3px solid white;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+}
+
+.card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image from stretching */
+    z-index: -1; /* Pushes image behind the text */
+    filter: brightness(0.6) blur(1px); /* Dims and blurs the image slightly */
+    transition: 0.5s ease;
+}
+
+.travel-card {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), 
+                url('travel.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.hangout-card {
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), 
+                url('hangout.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    z-index: 1; /* Ensures text stays on top */
+    color: white;
+}
+
+.card-content h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.card-content p {
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+/* Hover effect to "clear" the blur when you mouse over */
+.card:hover .card-img {
+    transform: scale(1.1);
+    filter: brightness(0.8) blur(0px);
+}
+
+/* --- End of Cards Section --- */
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: #b74b4b;
+}
+
+.home-img img {
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #b74b4b;
+    transition: 0.3s ease;
+}
+
+/* Hover effect for Social Icons - Flow Up */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b;
+}
+
+.social-icons a:hover {
+    color: black;
+    background-color: #b74b4b;
+    transform: translateY(-8px) scale(1.1); /* Flow up and grow */
+    box-shadow: 0 0 20px #b74b4b;
+}
+
+/* Larger icons for Contact Section */
+.social-icons.large a {
+    width: 7rem;
+    height: 7rem;
+    font-size: 3.5rem;
+}
+
+.typing-text {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 2rem 0;
+}
+
+.typing-text span::before {
+    content: "";
+    animation: words 15s infinite;
+}
+
+@keyframes words {
+    0%, 20% { content: "Data Manager"; }
+    21%, 40% { content: "IMS Specialist"; }
+    41%, 60% { content: "Systems Analyst"; }
+    61%, 80% { content: "Project Lead"; }
+    81%, 100% { content: "Web Designer"; }
+}
+
+/* Responsive */
+@media (max-width: 995px) {
+    .home { flex-direction: column; text-align: center; }
+    .home-img img { width: 60vw; }
+}
+
+/* ============================================================
+   MOBILE NAVIGATION (sidebar + top headers)
+   ============================================================ */
+
+/* Tablet: shrink the side rail so content has room */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 10px;
+        padding-bottom: 10px;
+    }
+    nav { gap: 1rem; }
+    nav a { font-size: 1.8rem; padding: 10px; }
+    header nav { margin-top: 8rem; }
+
+    section {
+        padding-left: 8rem;
+        margin-left: 2rem;
+    }
+
+    .homenav { padding: 15px 15px; }
+    .homenav .logo { font-size: 2.4rem; padding: 4px 10px; }
+    .homenav a { font-size: 2rem; }
+    .nav-links-wrapper { gap: 2rem; }
+
+}
+
+/* Phone: sidebar becomes a full-width bottom bar */
+@media (max-width: 600px) {
+    header {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        width: 100%;
+        padding: 8px 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header nav {
+        margin-top: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+        padding: 8px 6px;
+        text-align: center;
+    }
+
+    /* Keep the hover translate from colliding with the bottom edge */
+    nav a:hover { transform: translateY(-2px); }
+
+    /* Content no longer needs to clear a left sidebar */
+    section {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: 0;
+        padding-bottom: 10rem; /* room for bottom bar */
+    }
+
+    /* Top nav on home page: stack logo above the links, wrap links */
+    .homenav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 10px;
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    .homenav .logo { font-size: 2rem; }
+    .nav-links-wrapper {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .homenav a { font-size: 1.6rem; }
+
+    /* Push the home hero below the stacked top nav */
+    .home { padding-top: 30rem; }
+    .home .home-content h1 { font-size: 4rem; }
+    .typing-text { font-size: 1.7rem; }
+    .content-box {padding: 35px;}
+    .content-box h1{ font-size: 4.5rem; margin-left: 5px; }
+    .content-box h1 span { font-size: 4.5rem; padding:20px; }
+    
+    .fun-intro { font-size: 2rem; }
+
+    /* Hometown cards: stack full-width and clear the stacked top bar */
+    .hometown-page section {
+        padding-top: 16rem;
+        gap: 2rem;
+    }
+    .city-data-card {
+        padding: 2rem;
+        max-width: 100%;
+        width: 100%;
+    }
+    .hometown-page .image-viewport { height: 220px; }
+    .city-data-card h2 { font-size: 2.4rem; }
+
+    .hometown-page .hometown-map {
+        width: 100%;
+        height: 320px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b74b4b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E6C266; /* Turns gold when you grab it */
+}
+
+/* ============================================================
+   HOMETOWN PAGE ONLY
+   ============================================================ */
+
+/* Hide the left sidebar on this page — the .homenav top bar is used instead */
+.hometown-page header {
+    display: none !important;
+}
+
+/* Crimson highlight for the current page link */
+.hometown-page .homenav a.active {
+    color: #b74b4b;
+}
+
+/* 3. Center the section and remove the sidebar gap */
+.hometown-page section {
+    margin-left: 0 !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    margin-top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    padding-top: 12rem;
+    padding-bottom: 4rem;
+}
+
+.hometown-page .map-section {
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    min-height: auto;
+}
+
+.hometown-page .hometown-map {
+    border: 0;
+    max-width: 100%;
+    width: 600px;
+    height: 450px;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.3);
+}
+
+.city-data-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem;
+    border-radius: 2rem;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.hometown-page .city-pulse-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Sits behind your card but above the blobs */
+    pointer-events: none;
+}
+
+/* The actual glowing dots */
+.hometown-page .pulse {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: cityFlow 10s infinite linear;
+    opacity: 0;
+}
+
+/* Gold Pulse variant */
+.hometown-page .pulse.gold {
+    background: #E6C266;
+    box-shadow: 0 0 10px #E6C266, 0 0 20px #E6C266;
+}
+
+/* Crimson Pulse variant */
+.hometown-page .pulse.crimson {
+    background: #b74b4b;
+    box-shadow: 0 0 10px #b74b4b, 0 0 20px #b74b4b;
+}
+
+/* The "Traffic" movement animation */
+@keyframes cityFlow {
+    0% { 
+        transform: translate(0, 0); 
+        opacity: 0; 
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+        /* This simulates the dots moving across the screen */
+        transform: translate(300px, 300px); 
+        opacity: 0; 
+    }
+}
+
+/* --- HOLOGRAPHIC LOTUS TOWER --- */
+
+.hometown-page .hologram-container {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5rem; /* Space between the card and the tower */
+    perspective: 1000px;
+}
+
+.hometown-page .tower-image {
+    width: 100%;
+    height: auto;
+    /* This creates the glowing holographic effect */
+    filter: drop-shadow(0 0 15px #E6C266) brightness(1.2) opacity(0.8);
+    animation: flicker 4s infinite;
+}
+
+/* The Scanning Line */
+.hometown-page .scanner-line {
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 2px;
+    background: #b74b4b; /* Crimson beam */
+    box-shadow: 0 0 15px #b74b4b, 0 0 30px #b74b4b;
+    z-index: 10;
+    animation: scan 3s infinite ease-in-out;
+}
+
+/* Technical Label */
+.hometown-page .hologram-tag {
+    position: absolute;
+    bottom: -20px;
+    font-family: 'Bebas Neue';
+    font-size: 1.4rem;
+    color: #E6C266;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+/* ANIMATIONS */
+
+/* The Scanning Movement */
+@keyframes scan {
+    0% { top: 10%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 90%; opacity: 0; }
+}
+
+/* Subtle Hologram Flicker */
+@keyframes flicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.7; }
+    52% { opacity: 0.9; } /* Random glitch look */
+}
+
+/* Container for the image inside the card */
+.hometown-page .image-viewport {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    background: #000;
+}
+
+/* The Image itself */
+.hometown-page .hologram-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This stops it from looking stretched */
+    object-position: center;
+    opacity: 0.8;
+    filter: saturate(1.2) brightness(1.1);
+    
+    /* THE MAGIC: This fades the top and bottom edges */
+    -webkit-mask-image: linear-gradient(to bottom, 
+        transparent 0%, 
+        black 15%, 
+        black 85%, 
+        transparent 100%);
+    mask-image: linear-gradient(to bottom, 
+        transparent 0%, 
+        black 15%, 
+        black 85%, 
+        transparent 100%);
+}
+
+/* The Glowing Crimson Scanner */
+.hometown-page .scan-beam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #b74b4b;
+    box-shadow: 0 0 15px #b74b4b, 0 0 5px #fff;
+    z-index: 5;
+    animation: scanMove 4s infinite ease-in-out;
+}
+
+@keyframes scanMove {
+    0% { top: 15%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 85%; opacity: 0; }
+}
+
+.map-hologram {
+    /* This turns the map into a dark, high-contrast digital look */
+    filter: grayscale(100%) invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+    border: 2px solid #b74b4b; /* Your signature red */
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.map-hologram:hover {
+    /* When you hover, it "activates" and gains color/glow */
+    filter: grayscale(0%) invert(0%) hue-rotate(0deg);
+    box-shadow: 0 0 30px rgba(183, 75, 75, 0.6);
+}
